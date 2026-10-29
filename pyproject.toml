@@ -1,0 +1,14 @@
+[project]
+name = "lab-seguranca-owasp"
+version = "0.1.0"
+description = "Laboratório didático de SQL Injection e XSS em FastAPI"
+requires-python = ">=3.10"
+dependencies = ["fastapi", "uvicorn", "httpx", "pydantic"]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = ["security: testes de segurança ofensiva e defensiva (OWASP)"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore:.*testclient.*:Warning"]
